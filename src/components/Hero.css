@@ -1,0 +1,10 @@
+/* Hero.css */
+.swiper-pagination {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .swiper-pagination {
+    display: block !important;
+  }
+}
