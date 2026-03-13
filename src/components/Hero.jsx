@@ -46,7 +46,7 @@ const Hero = () => {
           <SwiperSlide key={banner.order}>
             <div className="relative w-full h-[200px] sm:h-[300px] md:h-[500px]">
               <img
-                src={`http://localhost:5000${banner.image}`}
+                src={`https://backend-clb.onrender.com${banner.image}`}
                 alt={banner.title}
                 className="w-full h-full object-cover md:object-contain bg-gray-100"
               />

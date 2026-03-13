@@ -4,7 +4,7 @@ const PostCard = ({ post }) => {
   return (
     <div className="post-card">
       <img
-        src={`http://localhost:5000${post.media[0]?.url}`}
+        src={`https://backend-clb.onrender.com${post.media[0]?.url}`}
         alt={post.title}
       />
 
