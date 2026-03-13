@@ -1,5 +1,9 @@
 import { Award, Users, Target, Heart } from "lucide-react";
-
+import tam from "../assets/images/tam.jpg";
+import van from "../assets/images/van.jpg";
+import linh from "../assets/images/linh.jpg";
+import quy from "../assets/images/quy.jpg";
+import tan from "../assets/images/tan.jpg";
 export default function About() {
   return (
     <div className="min-h-screen bg-background">
@@ -72,31 +76,15 @@ export default function About() {
           {/* Sử dụng Flexbox thay vì Grid để dễ dàng căn giữa hàng cuối */}
           <div className="flex flex-wrap justify-center gap-8">
             {[
-              {
-                name: "Nguyễn Minh Tâm",
-                image: "../assets/images/tam.jpg",
-                role: "Chủ Nhiệm",
-              },
+              { name: "Nguyễn Minh Tâm", image: tam, role: "Chủ Nhiệm" },
               {
                 name: "Nguyện Đặng Kiểu Vân",
-                image: "../assets/images/van.jpg",
+                image: van,
                 role: "Phó Chủ Nhiệm",
               },
-              {
-                name: "Đỗ Thị Mỹ Linh",
-                image: "../assets/images/linh.jpg",
-                role: "Bí Thư",
-              },
-              {
-                name: "Trần Thanh Quý",
-                image: "../assets/images/quy.jpg",
-                role: "Uỷ Viên",
-              },
-              {
-                name: "Trần Minh Tân",
-                image: "../assets/images/tan.jpg",
-                role: "Uỷ Viên",
-              },
+              { name: "Đỗ Thị Mỹ Linh", image: linh, role: "Bí Thư" },
+              { name: "Trần Thanh Quý", image: quy, role: "Uỷ Viên" },
+              { name: "Trần Minh Tân", image: tan, role: "Uỷ Viên" },
             ].map((member, idx) => (
               <div
                 key={idx}
@@ -105,7 +93,7 @@ export default function About() {
               >
                 <div className="w-full h-full rounded-full bg-green-500/20 mx-auto flex items-center justify-center">
                   <img
-                    src={new URL(member.image, import.meta.url).href}
+                    src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
