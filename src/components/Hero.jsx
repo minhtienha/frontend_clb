@@ -4,10 +4,11 @@ import { getBanners } from "../services/api";
 
 // Import Swiper React components và Styles
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 import "./Hero.css";
 
@@ -30,19 +31,20 @@ const Hero = () => {
   if (!banners.length) return null;
 
   return (
-    <div className="max-w-6xl mx-auto mt-2 rounded-xl overflow-hidden shadow-2xl">
+    <div className="mx-auto mt-2 rounded-xl overflow-hidden shadow-2xl">
       <Swiper
-        spaceBetween={0}
-        centeredSlides={true}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        modules={[Autoplay, Pagination, Navigation, EffectFade]}
+        effect={"fade"} // Chế độ ẩn hiện
+        fadeEffect={{ crossFade: true }} // Giúp chuyển cảnh mượt, không bị chồng ảnh
+        speed={800} // Tốc độ ẩn hiện (ms)
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         {banners.map((banner) => (
           <SwiperSlide key={banner.order}>
-            <div className="relative w-full h-[200px] sm:h-[300px] md:h-[450px]">
+            <div className="relative w-full h-[200px] sm:h-[300px] md:h-[500px]">
               <img
                 src={`http://localhost:5000${banner.image}`}
                 alt={banner.title}

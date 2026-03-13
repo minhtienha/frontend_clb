@@ -18,7 +18,10 @@ const Navbar = () => {
 
   return (
     <nav className="bg-green-500 shadow text-white  fixed top-0 z-50 left-0 w-full">
-      <div className="max-w-6xl mx-auto flex md:justify-center items-center h-16">
+      <div className="max-w-6xl mx-auto flex md:justify-between items-center h-16">
+        <div className="font-bold text-2xl">
+          <NavLink to="/">CLB CTXH HUIT</NavLink>
+        </div>
         <NavLink to="/" className="h-full flex items-center">
           <img src={logo} alt="Logo" className="md:hidden h-full" />
         </NavLink>
